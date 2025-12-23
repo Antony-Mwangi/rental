@@ -1,15 +1,9 @@
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Header from "./components/Header";
 
-export default function Home() {
+export default function Home(){
   return (
     <div>
-      <Navbar />
-      <div style={{ padding: "20px", textAlign: "center" }}>
-        <h1>Welcome to the Rental System</h1>
-        <p>Find your perfect property to rent easily.</p>
-      </div>
-      <Footer />
+      <Header />
     </div>
   );
 }
