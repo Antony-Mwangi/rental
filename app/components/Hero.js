@@ -33,9 +33,9 @@ export default function Hero() {
           alignItems: "center"
         }}
       >
-        {/* LEFT CONTENT */}
+        
         <div style={{ textAlign: isMobile ? "center" : "left" }}>
-          {/* Badge */}
+         
           <div
             style={{
               display: "inline-flex",
@@ -52,7 +52,7 @@ export default function Hero() {
             🏦 Estate Management
           </div>
 
-          {/* Heading */}
+        
           <h1
             style={{
               fontSize: isMobile ? "36px" : "48px",
@@ -66,7 +66,7 @@ export default function Hero() {
             <span style={{ color: "#2563eb" }}>Simplified.</span>
           </h1>
 
-          {/* Subheading */}
+          
           <h3
             style={{
               fontSize: isMobile ? "18px" : "20px",
@@ -78,7 +78,7 @@ export default function Hero() {
             Empowering You to Manage Your Estate Effortlessly.
           </h3>
 
-          {/* Paragraph */}
+
           <p
             style={{
               fontSize: "16px",
@@ -92,7 +92,7 @@ export default function Hero() {
             data insights that enable seamless operations.
           </p>
 
-          {/* Buttons */}
+        
           <div
             style={{
               display: "flex",
@@ -113,7 +113,7 @@ export default function Hero() {
               }}
             >
               ⬇ Download Proposal
-            </button>
+            </button>*/}
 
             <button
               style={{
@@ -127,11 +127,10 @@ export default function Hero() {
               }}
             >
               Explore Features →
-            </button> */}
+            </button> 
           </div>
         </div>
 
-        {/* RIGHT IMAGE AREA */}
         <div
           style={{
             position: "relative",
@@ -140,7 +139,7 @@ export default function Hero() {
             padding: isMobile ? "20px" : "30px"
           }}
         >
-          {/* Main image */}
+         
           <img
             src="/sql4.jpeg"
             alt="Estate"
@@ -150,7 +149,7 @@ export default function Hero() {
             }}
           />
 
-          {/* Phone image */}
+          
           <img
             src="/phone2.jpeg"
             alt="Dashboard"
