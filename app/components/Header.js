@@ -15,7 +15,6 @@ export default function Header() {
 
     handleResize();
     window.addEventListener("resize", handleResize);
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -30,7 +29,7 @@ export default function Header() {
       {/* DESKTOP NAV */}
       {!isMobile && (
         <nav style={styles.nav}>
-          <NavLink href="/">Home</NavLink>
+          <NavLink href="/Definition">Home</NavLink>
           <NavLink href="#">About</NavLink>
           <NavLink href="#">Pricing</NavLink>
           <NavLink href="#">Contact</NavLink>
@@ -52,7 +51,7 @@ export default function Header() {
       {/* MOBILE MENU */}
       {isMobile && menuOpen && (
         <div style={styles.mobileMenu}>
-          <NavLink href="/" onClick={() => setMenuOpen(false)}>Home</NavLink>
+          <NavLink href="/Definition" onClick={() => setMenuOpen(false)}>Home</NavLink>
           <NavLink href="#" onClick={() => setMenuOpen(false)}>About</NavLink>
           <NavLink href="#" onClick={() => setMenuOpen(false)}>Pricing</NavLink>
           <NavLink href="#" onClick={() => setMenuOpen(false)}>Contact</NavLink>
