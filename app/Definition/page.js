@@ -8,7 +8,7 @@ export default function Definition() {
   const slides = [
     {
       tagline: "Simplify • Automate • Manage",
-      heading: "Effortless Property Management from the Comfort of Your Home",
+      heading: "Effortless Property Management from Home",
       text: "Oversee your portfolio effortlessly from the coziness of your personal sanctuary",
       image: "/couple.PNG",
     },
@@ -32,101 +32,111 @@ export default function Definition() {
     setCurrentSlide((currentSlide - 1 + slides.length) % slides.length);
 
   return (
-    <main className="container">
+    <main className="page-wrapper">
       <style jsx global>{`
         :root {
-          --primary: #1a365d;
-          --accent: #3182ce;
-          --text-dark: #2d3748;
-          --text-light: #718096;
-          --bg-light: #f7fafc;
-          --white: #ffffff;
+          --primary: #1e3a8a;
+          --accent: #2563eb;
+          --bg: #ffffff;
+          --card-bg: #f8fafc;
+          --text-main: #1e293b;
+          --text-muted: #64748b;
+          --radius: 16px;
+        }
+
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
         }
 
         body {
-          margin: 0;
-          font-family: 'Inter', sans-serif;
-          color: var(--text-dark);
-          line-height: 1.6;
+          font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+          color: var(--text-main);
+          background-color: var(--bg);
+          overflow-x: hidden;
         }
 
+        /* Responsive Container */
         section {
-          padding: 80px 5%;
+          width: 100%;
+          padding: 60px 20px;
           max-width: 1200px;
           margin: 0 auto;
         }
 
-        /* Hero Section */
+        /* --- HERO SECTION --- */
         .hero {
-          background: linear-gradient(to right, #f8fbff, #ffffff);
-          min-height: 500px;
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          position: relative;
+          align-items: center;
+          gap: 40px;
+          padding-top: 40px;
+          text-align: center;
         }
 
-        .hero-slide {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 40px;
-          align-items: center;
+        .hero-text {
+          order: 2; /* Text below image on mobile */
         }
 
         .tagline {
-          color: var(--accent);
+          display: inline-block;
+          font-size: 0.8rem;
           font-weight: 700;
+          color: var(--accent);
           text-transform: uppercase;
-          letter-spacing: 1px;
-          font-size: 0.9rem;
+          letter-spacing: 1.5px;
+          margin-bottom: 15px;
         }
 
         .hero-text h1 {
-          font-size: 3rem;
-          line-height: 1.2;
-          margin: 20px 0;
+          font-size: clamp(2rem, 5vw, 3.5rem);
+          line-height: 1.1;
           color: var(--primary);
+          margin-bottom: 20px;
         }
 
         .hero-text p {
-          font-size: 1.2rem;
+          font-size: clamp(1rem, 2vw, 1.25rem);
+          color: var(--text-muted);
           margin-bottom: 30px;
-          color: var(--text-light);
+          max-width: 600px;
+          margin-inline: auto;
         }
 
-        .cta {
-          background: var(--primary);
-          color: white;
-          padding: 15px 30px;
-          border-radius: 8px;
-          text-decoration: none;
-          display: inline-block;
-          font-weight: 600;
-          transition: transform 0.2s;
-        }
-
-        .cta:hover {
-          transform: translateY(-2px);
-          background: #2c5282;
+        .hero-image-container {
+          order: 1; /* Image on top on mobile */
+          width: 100%;
+          max-width: 500px;
+          position: relative;
         }
 
         .hero-image {
-          border-radius: 20px;
-          object-fit: cover;
+          width: 100%;
+          height: auto;
+          border-radius: var(--radius);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
         .hero-controls {
-          margin-top: 30px;
+          display: flex;
+          gap: 15px;
+          justify-content: center;
+          margin-top: 20px;
         }
 
         .hero-controls button {
-          background: var(--white);
-          border: 1px solid #ddd;
-          padding: 10px 20px;
-          cursor: pointer;
-          margin-right: 10px;
+          background: white;
+          border: 1px solid #e2e8f0;
+          width: 45px;
+          height: 45px;
           border-radius: 50%;
-          transition: all 0.3s;
+          cursor: pointer;
+          font-size: 1.2rem;
+          transition: 0.3s;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .hero-controls button:hover {
@@ -134,139 +144,172 @@ export default function Definition() {
           color: white;
         }
 
-        /* Features Section */
+        /* --- FEATURES (Grid) --- */
         .features {
+          background: var(--card-bg);
+          border-radius: 40px;
+          margin-block: 40px;
+        }
+
+        .features h2 {
           text-align: center;
-          background: var(--bg-light);
-          max-width: 100%;
+          margin-bottom: 40px;
+          font-size: clamp(1.5rem, 4vw, 2.5rem);
         }
 
         .feature-cards {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
           gap: 20px;
-          margin: 40px 0;
         }
 
         .feature-card {
           background: white;
-          padding: 20px;
-          border-radius: 12px;
-          box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-          font-weight: 500;
-          border-bottom: 3px solid transparent;
-          transition: border-color 0.3s;
+          padding: 24px;
+          border-radius: var(--radius);
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+          transition: transform 0.2s;
         }
 
         .feature-card:hover {
-          border-color: var(--accent);
+          transform: translateY(-5px);
+          color: var(--accent);
         }
 
-        /* User Types Section */
+        /* --- USER TYPES --- */
         .user-types {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 30px;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 25px;
         }
 
         .user-card {
           padding: 30px;
-          border: 1px solid #edf2f7;
-          border-radius: 15px;
-          text-align: center;
+          border-radius: var(--radius);
+          background: #fff;
+          border: 1px solid #f1f5f9;
+          transition: 0.3s;
         }
 
-        .user-card h3 {
-          color: var(--primary);
-          margin-bottom: 15px;
+        .user-card:hover {
+          background: var(--primary);
         }
 
-        /* Diaspora Section */
+        .user-card:hover h3, .user-card:hover p {
+          color: white;
+        }
+
+        /* --- DIASPORA / STATS --- */
         .diaspora {
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 60px;
+          grid-template-columns: 1fr;
+          gap: 40px;
           align-items: center;
         }
 
         .stats {
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 20px;
-          margin-top: 30px;
+          grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+          gap: 15px;
+          margin: 30px 0;
         }
 
         .stat-card {
-          background: var(--primary);
-          color: white;
           padding: 20px;
-          border-radius: 10px;
-        }
-
-        /* Testimonials */
-        .testimonials {
+          background: #eff6ff;
+          border-radius: 12px;
           text-align: center;
         }
 
-        .testimonial-cards {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 30px;
-          margin-top: 50px;
+        .stat-card h3 {
+          font-size: 1.8rem;
+          color: var(--accent);
         }
+
+        /* --- TESTIMONIALS --- */
+        .testimonial-cards {
+          display: flex;
+          overflow-x: auto;
+          gap: 20px;
+          padding-bottom: 20px;
+          scrollbar-width: none; /* Firefox */
+        }
+
+        .testimonial-cards::-webkit-scrollbar { display: none; } /* Chrome/Safari */
 
         .testimonial-card {
+          min-width: 280px;
           background: #fdfdfd;
-          padding: 30px;
-          border-radius: 20px;
-          border: 1px solid #eee;
-          text-align: left;
-          font-style: italic;
+          padding: 25px;
+          border-radius: var(--radius);
+          border: 1px solid #e2e8f0;
         }
 
-        /* Final CTA */
+        /* --- FINAL CTA --- */
         .final-cta {
           background: var(--primary);
           color: white;
-          text-align: center;
           border-radius: 30px;
-          margin-bottom: 80px;
+          text-align: center;
+          margin-bottom: 60px;
         }
 
-        .link-btn {
-          color: var(--accent);
-          text-decoration: underline;
-          font-weight: bold;
+        .cta {
+          display: inline-block;
+          background: var(--accent);
+          color: white;
+          padding: 16px 32px;
+          border-radius: 50px;
+          text-decoration: none;
+          font-weight: 700;
+          margin-top: 20px;
+          transition: opacity 0.2s;
         }
 
-        @media (max-width: 768px) {
-          .hero-slide, .diaspora {
-            grid-template-columns: 1fr;
+        /* --- DESKTOP ADJUSTMENTS --- */
+        @media (min-width: 992px) {
+          .hero {
+            flex-direction: row;
+            text-align: left;
+            min-height: 80vh;
           }
-          .hero-text h1 { font-size: 2rem; }
+          .hero-text { order: 1; flex: 1; }
+          .hero-image-container { order: 2; flex: 1; max-width: 600px; }
+          .hero-text p { margin-inline: 0; }
+          .hero-controls { justify-content: flex-start; }
+          .diaspora { grid-template-columns: 1fr 1fr; }
+          .testimonial-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            overflow-x: visible;
+          }
         }
       `}</style>
 
       {/* HERO / SLIDER */}
       <section className="hero">
-        <div className="hero-slide">
-          <div className="hero-text">
-            <span className="tagline">{slides[currentSlide].tagline}</span>
-            <h1>{slides[currentSlide].heading}</h1>
-            <p>{slides[currentSlide].text}</p>
-            <Link href="/register" className="cta">Get Started - It's Free!</Link>
+        <div className="hero-text">
+          <span className="tagline">{slides[currentSlide].tagline}</span>
+          <h1>{slides[currentSlide].heading}</h1>
+          <p>{slides[currentSlide].text}</p>
+          <Link href="/register" className="cta">Get Started - It's Free!</Link>
+          <div className="hero-controls">
+            <button onClick={prevSlide}>❮</button>
+            <button onClick={nextSlide}>❯</button>
           </div>
+        </div>
+        <div className="hero-image-container">
           <Image
             src={slides[currentSlide].image}
             alt={slides[currentSlide].heading}
-            width={450}
-            height={450}
+            width={600}
+            height={600}
+            priority
             className="hero-image"
           />
-        </div>
-        <div className="hero-controls">
-          <button onClick={prevSlide}>❮</button>
-          <button onClick={nextSlide}>❯</button>
         </div>
       </section>
 
@@ -275,31 +318,28 @@ export default function Definition() {
         <h2>What Silqu can do for you</h2>
         <div className="feature-cards">
           {[
-            "Rent and service charge collection",
+            "Rent collection",
             "Tenant Management",
-            "Financial Accounts reconciliation",
+            "Accounts reconciliation",
             "Visitor Management",
-            "Vehicles and Parking Management",
+            "Parking Management",
             "Billing management",
-            "Automated Invoicing and Receipting",
+            "Automated Invoicing",
             "Expense management",
-            "Property Reports and Analytics",
+            "Property Analytics",
           ].map((feature, i) => (
             <div key={i} className="feature-card">{feature}</div>
           ))}
         </div>
-        <p className="features-desc">
-          We streamline all aspects of property management. Handle rent, tenants, maintenance, financial insights, and reports seamlessly.
-        </p>
       </section>
 
       {/* USER TYPES */}
       <section className="user-types">
         {[
-          { title: "For Landlords", text: "Individual and professional landlords managing properties." },
-          { title: "For Property Managers", text: "Comprehensive tools for professional property management companies." },
-          { title: "For Developers", text: "Solutions for real estate developers managing multiple projects." },
-          { title: "For Estate Managers", text: "Integrated systems for large estate and community management." },
+          { title: "Landlords", text: "Individual and professional landlords managing properties." },
+          { title: "Property Managers", text: "Comprehensive tools for professional companies." },
+          { title: "Developers", text: "Solutions for real estate developers and projects." },
+          { title: "Estate Managers", text: "Systems for large estates and communities." },
         ].map((user, i) => (
           <div key={i} className="user-card">
             <h3>{user.title}</h3>
@@ -310,42 +350,36 @@ export default function Definition() {
 
       {/* DIASPORA / STATS */}
       <section className="diaspora">
-        <Image src="/stress.PNG" alt="Man stressed over bills" width={500} height={400} className="hero-image" />
+        <Image src="/stress.PNG" alt="Management" width={500} height={400} className="hero-image" />
         <div>
           <h2>Property Management from Afar</h2>
-          <h4>Distribution of Silqu Landlords</h4>
           <div className="stats">
             {[
-              { value: "900+", label: "Landlords managing from afar" },
-              { value: "10K+", label: "Properties under Silqu Management" },
-              { value: "5+", label: "Years of commitment" },
+              { value: "900+", label: "Global Landlords" },
+              { value: "10K+", label: "Properties Managed" },
+              { value: "5+", label: "Years Experience" },
             ].map((stat, i) => (
               <div key={i} className="stat-card">
                 <h3>{stat.value}</h3>
-                <p>{stat.label}</p>
+                <p style={{fontSize: '0.8rem'}}>{stat.label}</p>
               </div>
             ))}
           </div>
-          <p className="diaspora-link">
-            Map showing our global presence — <strong>Join Hundreds Of Diaspora Landlords</strong>
-          </p>
+          <p><strong>Join Hundreds Of Diaspora Landlords</strong></p>
         </div>
       </section>
 
       {/* TESTIMONIALS */}
       <section className="testimonials">
-        <h2>Trusted by Landlords & Agents worldwide</h2>
-        <p>Dive into the inspiring world of Silqu’s success stories.</p>
-        <Link href="/success-stories" className="link-btn">View Success Stories</Link>
-
+        <h2 style={{textAlign: 'center', marginBottom: '30px'}}>Trusted Worldwide</h2>
         <div className="testimonial-cards">
           {[
-            { name: "ACIMKenya", text: "I don't write reviews but I had to for Silqu. Joined in January after a hectic period dealing with agents..." },
+            { name: "ACIMKenya", text: "Joined in January after a hectic period dealing with agents. Life is easier now." },
             { name: "Lynn Njura", text: "As a landlord from the diaspora, SILQU makes my life so much easier..." },
-            { name: "Lyne Wambu", text: "Property management made easier by SILQU indeed they are smart managers." },
+            { name: "Lyne Wambu", text: "Property management made easier by SILQU, they are truly smart managers." },
           ].map((t, i) => (
             <div key={i} className="testimonial-card">
-              <h4>{t.name}</h4>
+              <h4 style={{color: 'var(--accent)', marginBottom: '10px'}}>{t.name}</h4>
               <p>"{t.text}"</p>
             </div>
           ))}
@@ -354,13 +388,9 @@ export default function Definition() {
 
       {/* FINAL CTA */}
       <section className="final-cta">
-        <h2>Join 10,000+ landlords discovering a smart way to manage properties.</h2>
-        <p>Becoming a landlord in Kenya can be a lucrative venture with the right tools.</p>
-        <div style={{margin: '30px 0'}}>
-            <Link href="/diaspora" className="link-btn" style={{color: '#63b3ed'}}>Diaspora? Click here</Link>
-        </div>
-        <h3>Ready for The Silqu Experience?</h3>
-        <Link href="/dashboard" className="cta" style={{background: '#fff', color: '#1a365d', marginTop: '20px'}}>Dashboard</Link>
+        <h2>Ready for The Silqu Experience?</h2>
+        <p style={{marginTop: '15px', opacity: 0.9}}><b>Join 10,000+ landlords</b> discovering a smart way to manage properties.</p>
+        <Link href="/dashboard" className="cta" style={{background: 'white', color: 'var(--primary)'}}>Go to Dashboard</Link>
       </section>
     </main>
   );
