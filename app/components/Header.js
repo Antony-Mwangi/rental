@@ -34,7 +34,8 @@ export default function Header() {
           <NavLink href="#">Pricing</NavLink>
           <NavLink href="#">Contact</NavLink>
 
-          <button style={styles.loginBtn}>Login</button>
+          {/* <button style={styles.loginBtn}>Login</button> */}
+          <NavLink href="/Login">Login</NavLink>
         </nav>
       )}
 

@@ -295,7 +295,7 @@ export default function Definition() {
           <span className="tagline">{slides[currentSlide].tagline}</span>
           <h1>{slides[currentSlide].heading}</h1>
           <p>{slides[currentSlide].text}</p>
-          <Link href="/register" className="cta">Get Started - It's Free!</Link>
+          <Link href="/Login" className="cta">Get Started - It's Free!</Link>
           <div className="hero-controls">
             <button onClick={prevSlide}>❮</button>
             <button onClick={nextSlide}>❯</button>
