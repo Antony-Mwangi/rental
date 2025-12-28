@@ -33,7 +33,7 @@ export default function Login() {
             </div>
 
             <div className="actions">
-              <Link href="/forgot-password">Forgot Password?</Link>
+              <Link href="/ForgotPassword">Forgot Password?</Link>
             </div>
 
             <button className="btn">Proceed →</button>
