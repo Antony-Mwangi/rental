@@ -390,7 +390,7 @@ export default function Definition() {
       <section className="final-cta">
         <h2>Ready for The Silqu Experience?</h2>
         <p style={{marginTop: '15px', opacity: 0.9}}><b>Join 10,000+ landlords</b> discovering a smart way to manage properties.</p>
-        <Link href="/dashboard" className="cta" style={{background: 'white', color: 'var(--primary)'}}>Go to Dashboard</Link>
+        <Link href="/Dashboard" className="cta" style={{background: 'white', color: 'var(--primary)'}}>Go to Dashboard</Link>
       </section>
     </main>
   );
