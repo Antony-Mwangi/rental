@@ -8,7 +8,7 @@ export default function Register() {
     <>
       <div className="page">
         <div className="container">
-          {/* LEFT: FORM */}
+          
           <div className="form-section">
             <Image
               src="/slq.PNG"
@@ -42,7 +42,7 @@ export default function Register() {
 
             <p className="login-link">
               Already have an account?{" "}
-              <Link href="/login">Login</Link>
+              <Link href="/Login">Login</Link>
             </p>
 
             <footer>
@@ -50,12 +50,11 @@ export default function Register() {
               <div className="footer-links">
                 <Link href="/privacy">Privacy Policy</Link>
                 <Link href="/terms">Terms of Service</Link>
-                <Link href="/tutorial">Tutorial</Link>
               </div>
             </footer>
           </div>
 
-          {/* RIGHT: IMAGE */}
+          
           <div className="image-section">
             <Image
               src="/sc9.PNG"
@@ -67,7 +66,7 @@ export default function Register() {
         </div>
       </div>
 
-      {/* PURE INTERNAL CSS */}
+      
       <style>{`
         * {
           box-sizing: border-box;
