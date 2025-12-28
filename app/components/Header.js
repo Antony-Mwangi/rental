@@ -30,16 +30,16 @@ export default function Header() {
       {!isMobile && (
         <nav style={styles.nav}>
           <NavLink href="/Definition">Home</NavLink>
-          <NavLink href="#">About</NavLink>
-          <NavLink href="#">Pricing</NavLink>
-          <NavLink href="#">Contact</NavLink>
+          <NavLink href="/About">About</NavLink>
+          <NavLink href="/Pricing">Pricing</NavLink>
+          <NavLink href="/Contact">Contact</NavLink>
 
-          {/* <button style={styles.loginBtn}>Login</button> */}
+        
           <NavLink href="/Login">Login</NavLink>
         </nav>
       )}
 
-      {/* MOBILE MENU ICON */}
+    
       {isMobile && (
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -49,13 +49,13 @@ export default function Header() {
         </button>
       )}
 
-      {/* MOBILE MENU */}
+    
       {isMobile && menuOpen && (
         <div style={styles.mobileMenu}>
           <NavLink href="/Definition" onClick={() => setMenuOpen(false)}>Home</NavLink>
-          <NavLink href="#" onClick={() => setMenuOpen(false)}>About</NavLink>
-          <NavLink href="#" onClick={() => setMenuOpen(false)}>Pricing</NavLink>
-          <NavLink href="#" onClick={() => setMenuOpen(false)}>Contact</NavLink>
+          <NavLink href="/About" onClick={() => setMenuOpen(false)}>About</NavLink>
+          <NavLink href="/Pricing" onClick={() => setMenuOpen(false)}>Pricing</NavLink>
+          <NavLink href="/Contact" onClick={() => setMenuOpen(false)}>Contact</NavLink>
 
           <button style={styles.loginBtn}>Login</button>
         </div>
@@ -64,7 +64,7 @@ export default function Header() {
   );
 }
 
-/* ------------------ REUSABLE LINK ------------------ */
+
 function NavLink({ href, children, onClick }) {
   return (
     <Link
@@ -77,7 +77,6 @@ function NavLink({ href, children, onClick }) {
   );
 }
 
-/* ------------------ STYLES ------------------ */
 const styles = {
   header: {
     backgroundColor: "#0f172a",
