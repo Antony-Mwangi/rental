@@ -47,7 +47,7 @@ export default function Pricing() {
               <li>Priority support</li>
             </ul>
 
-            <Link href="/register" className="btn">
+            <Link href="/Register" className="btn">
               Start Free Trial
             </Link>
           </div>
