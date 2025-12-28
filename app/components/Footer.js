@@ -1,16 +1,14 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer style={styles.footer}>
       <div style={styles.container}>
-        
+        {/* BRAND */}
         <div style={styles.column}>
           <div style={styles.brand}>
-            <img
-              src="/slq.PNG"
-              alt="Silqu Logo"
-              style={{ height: "40px" }}
-            />
-            <h3 style={{ margin: 0 }}>SILQU</h3>
+            <img src="/slq.PNG" alt="Silqu Logo" style={{ height: "40px" }} />
+            <h3 style={{ margin: 0, color: "white" }}>SILQU</h3>
           </div>
           <p style={styles.text}>
             SILQU is a smart property management system that simplifies
@@ -18,33 +16,35 @@ export default function Footer() {
           </p>
         </div>
 
-        
+        {/* QUICK LINKS */}
         <div style={styles.column}>
           <h4 style={styles.heading}>Quick Links</h4>
           <ul style={styles.list}>
-            <li>Login</li>
-            <li>Contact</li>
-            <li>home</li>
-            
+            <li>
+              <Link href="/Definition" style={styles.link}>Home</Link>
+            </li>
+            <li>
+              <Link href="/About" style={styles.link}>About</Link>
+            </li>
+            <li>
+              <Link href="/Pricing" style={styles.link}>Pricing</Link>
+            </li>
+            <li>
+              <Link href="/Contact" style={styles.link}>Contact</Link>
+            </li>
           </ul>
         </div>
 
-        
+        {/* CONTACT */}
         <div style={styles.column}>
           <h4 style={styles.heading}>Contact</h4>
           <p style={styles.text}>Ridgeways Off Kiambu Road, Nairobi</p>
           <p style={styles.text}>📞 +254 787 888 828</p>
           <p style={styles.text}>✉ info@silqu.com</p>
-
-          <div style={styles.socials}>
-            {/* <span>📸</span> */}
-            {/* <span>📘</span>
-            <span>💬</span> */}
-          </div>
         </div>
       </div>
 
-      {/* BOTTOM BAR */}
+      {/* BOTTOM */}
       <div style={styles.bottom}>
         © 2025 SILQU — All rights reserved
       </div>
@@ -56,7 +56,7 @@ const styles = {
   footer: {
     backgroundColor: "#0f172a",
     color: "#e5e7eb",
-    padding: "60px 40px 20px"
+    padding: "60px 40px 20px",
   },
 
   container: {
@@ -64,31 +64,31 @@ const styles = {
     margin: "0 auto",
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-    gap: "40px"
+    gap: "40px",
   },
 
   column: {
     display: "flex",
     flexDirection: "column",
-    gap: "12px"
+    gap: "12px",
   },
 
   brand: {
     display: "flex",
     alignItems: "center",
-    gap: "10px"
+    gap: "10px",
   },
 
   heading: {
     fontSize: "18px",
     marginBottom: "10px",
-    color: "white"
+    color: "white",
   },
 
   text: {
     fontSize: "14px",
     color: "#cbd5f5",
-    lineHeight: "1.6"
+    lineHeight: "1.6",
   },
 
   list: {
@@ -98,16 +98,12 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     gap: "10px",
-    fontSize: "14px",
-    cursor: "pointer"
   },
 
-  socials: {
-    display: "flex",
-    gap: "12px",
-    fontSize: "20px",
-    marginTop: "10px",
-    cursor: "pointer"
+  link: {
+    color: "#cbd5f5",
+    textDecoration: "none",
+    fontSize: "14px",
   },
 
   bottom: {
@@ -116,6 +112,6 @@ const styles = {
     borderTop: "1px solid #1e293b",
     textAlign: "center",
     fontSize: "14px",
-    color: "#94a3b8"
-  }
+    color: "#94a3b8",
+  },
 };
