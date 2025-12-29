@@ -45,7 +45,7 @@ export default function Login() {
             <footer>
               <p>Copyright © Silqu</p>
               <div className="footer-links">
-                <Link href="/privacy">Privacy Policy</Link>
+                <Link href="/privacy-policy">Privacy Policy</Link>
                 <Link href="/terms">Terms of Service</Link>
                 
               </div>
