@@ -254,7 +254,9 @@ export default function Definition() {
           color: white;
           border-radius: 30px;
           text-align: center;
-          
+          margin-bottom: 60px;
+        }
+
         .cta {
           display: inline-block;
           background: var(--accent);
