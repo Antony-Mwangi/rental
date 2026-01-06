@@ -3,10 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "mongodb"
+  // url is removed! Prisma 7+ reads connection from prisma.config.ts
 }
-
 
 model User {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
