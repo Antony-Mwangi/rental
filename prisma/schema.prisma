@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "mongodb"
-  // url is removed! Prisma 7+ reads connection from prisma.config.ts
+  // NO URL here!
 }
 
 model User {
